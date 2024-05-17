@@ -1,35 +1,44 @@
 <form #form="ngForm" (submit)="onSubmit(form)">
-    <input type="hidden" name="cardHolderid" [value]="service.formData.paymentDetailId">
+    <input type="hidden" name="cardHolderid" 
+    [value]="service.formData.paymentDetailId"
+    [class.submited]="service.isValidSubmit" >
  
 <div class="md-3">
-      <label>card id</label>
+   <label>card id</label>
    <input type="number" class="form-control form-control-lg" 
    placeholder="id"
   name="cardHolderid"
-   [(ngModel)]="service.formData.paymentDetailId">
+   [(ngModel)]="service.formData.paymentDetailId" required>
    </div>
    <div class="md-3">
    <label>card name</label>
    <input type="text" class="form-control form-control-lg" 
-   placeholder="name"
-  
+   placeholder="NAME"
+   
+   maxlength="3"
+   minlength="3"
    name="cardHolderName"
-   [(ngModel)]="service.formData.cardHolderName">
+   [(ngModel)]="service.formData.cardHolderName" required>
 </div>
 <div class="md-3">
    <label>card number</label>
-   <input type="text" class="form-control form-control-lg" 
-   placeholder="number"
-  
+   <input type="text"
+   class="form-control form-control-lg" 
+   placeholder="CARD NUMBER"
+   required 
+   maxlength="16"
+   minlength="16"
    name="cardHolderNumber"
    [(ngModel)]="service.formData.cardNumber">
 </div>
 <div class="md-3">
    <label>card </label>
-   <input type="text" 
+   <input type="password" 
    class="form-control form-control-lg" 
-   placeholder="code"
-  
+   placeholder="CVV"
+   required
+   maxlength="3"
+   minlength="3"
    name="cardHolderSecurity"
    [(ngModel)]="service.formData.securityCode">
 </div>
@@ -37,8 +46,10 @@
    <label>card </label>
    <input type="text" 
    class="form-control form-control-lg" 
-   placeholder="date"
-  
+   placeholder="MM/YY"
+   required
+   maxlength="5"
+   minlength="5"
    name="cardHolderDate"
    [(ngModel)]="service.formData.expairyDate">
 </div>

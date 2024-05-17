@@ -16,3 +16,6 @@ form input::placeholder{
     color: #c0bdbd;
     font-weight: 300;
 }
+input.ng-invalid form.submited {
+    border-color: red;
+}
