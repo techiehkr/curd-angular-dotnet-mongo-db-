@@ -1235,11 +1235,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/user/angwithdot/backend/backend.csproj",
+      "projectUniqueName": "/home/user/aaaa/curd-angular-dotnet-mongo-db-/backend/backend.csproj",
       "projectName": "backend",
-      "projectPath": "/home/user/angwithdot/backend/backend.csproj",
+      "projectPath": "/home/user/aaaa/curd-angular-dotnet-mongo-db-/backend/backend.csproj",
       "packagesPath": "/home/user/.nuget/packages/",
-      "outputPath": "/home/user/angwithdot/backend/obj/",
+      "outputPath": "/home/user/aaaa/curd-angular-dotnet-mongo-db-/backend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/user/.nuget/NuGet/NuGet.Config"

@@ -56,7 +56,8 @@ public async Task<IActionResult> Get()
     public async Task<IActionResult> Post([FromBody] PaymentCard article)
     {
         await _context.paymentcard.InsertOneAsync(article);
-        return CreatedAtAction("Get", new { id = article.PaymentDetailId }, article);
+        return Ok(await _context.paymentcard.Find(_ => true).ToListAsync());//CreatedAtAction("Get", new { id = article.PaymentDetailId }, article);
+
     }
 
     [HttpPut("{id}")]
@@ -71,7 +72,8 @@ public async Task<IActionResult> Get()
 
         article.PaymentDetailId = existingArticle.PaymentDetailId;
         await _context.paymentcard.ReplaceOneAsync(a => a.PaymentDetailId == id, article);
-        return NoContent();
+        
+        return Ok(await _context.paymentcard.Find(_ => true).ToListAsync());
     }
 
     [HttpDelete("{id}")]
@@ -85,6 +87,6 @@ public async Task<IActionResult> Get()
         }
 
         await _context.paymentcard.DeleteOneAsync(a => a.PaymentDetailId == id);
-        return NoContent();
+        return Ok(await _context.paymentcard.Find(_ => true).ToListAsync());// NoContent();
     }
 }
